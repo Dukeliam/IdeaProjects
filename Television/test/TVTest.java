@@ -136,4 +136,22 @@ public class TVTest {
         Assertions.assertEquals(1, tv.getChannel());
     }
 
+    @Test
+    public void testThatTVCanBeMutedWhenTVIsOn() {
+        TV tv = new TV();
+
+        tv.turnOn();
+        tv.mute();
+
+        Assertions.assertTrue(tv.isMuted());
+    }
+
+    @Test
+    public void testThatTVCannotBeMutedWhenTVIsOff() {
+        TV tv = new TV();
+
+        tv.mute();
+
+        Assertions.assertFalse(tv.isMuted());
+    }
 }

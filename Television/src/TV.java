@@ -3,6 +3,7 @@ public class TV {
     private int volume = 50;
     private int channel = 3;
     private String name = "Samsung";
+    private boolean muted = false;
 
     public void turnOn() {
         on = true;
@@ -62,5 +63,17 @@ public class TV {
         if (channel > 1) {
             channel--;
         }
+    }
+
+    public void mute() {
+        if (on == false) {
+            return;
+        }
+
+        muted = true;
+    }
+
+    public boolean isMuted() {
+        return muted;
     }
 }
